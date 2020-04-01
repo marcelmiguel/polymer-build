@@ -2,19 +2,22 @@
 # Build image
 ############################
 
-FROM marcelmiguel/polymer-build:latest
+FROM marcelmiguel/polymer-build:v0.0.1 as builder
 
 LABEL mantainer="Marcel Miguel <marcel.miguel@neogrup.com>"
 
-VOLUME /root/app
-RUN mkdir -p app
-WORKDIR /root/app
+# VOLUMES?
+RUN mkdir -p /app
+WORKDIR /app 
 
-RUN bower install 
+COPY package.json ./
 RUN npm install
-RUN polymer 
 
-CMD polymer build
+COPY . ./
+
+RUN polymer build
+
+RUN ls -l /app/build/default
 
 ############################
 # Nginx static web page
@@ -22,6 +25,10 @@ CMD polymer build
 
 FROM nginx:stable-alpine as release
 LABEL mantainer="Marcel Miguel <marcel.miguel@gmail.com>"
-COPY build/default/ /usr/share/nginx/html/
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
-EXPOSE 8777
+COPY --from=builder /app/build/default/ /usr/share/nginx/html/
+COPY nginx/default.conf /etc/nginx/conf.d/
+
+RUN ls -l /usr/share/nginx/html/
+
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
