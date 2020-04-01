@@ -20,7 +20,7 @@ LABEL mantainer="Marcel Miguel <marcel.miguel@neogrup.com>"
 
 # VOLUMES?
 RUN mkdir -p /app
-WORKDIR /app 
+WORKDIR /app
 
 COPY package.json ./
 RUN npm install
@@ -65,3 +65,4 @@ make build
 ## Links
 
 [Docker nginx image](https://stackoverflow.com/questions/55270099/how-do-i-build-a-custom-nginxalpine-based-container-listening-on-port-other-tha)
+[With docker-compose and dev](https://hackernoon.com/a-better-way-to-develop-node-js-with-docker-cd29d3a0093)
