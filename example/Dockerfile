@@ -15,6 +15,10 @@ RUN npm install
 
 COPY . ./
 
+RUN echo -e "\033[0;36mNode version: " $(node --version) "\033[0m"
+RUN echo -e "\033[0;36mPolymer version: " $(polymer --version) "\033[0m"
+RUN echo -e "\033[0;36mBower version: " $(bower --version) "\033[0m"
+
 RUN polymer build
 
 RUN ls -l /app/build/default
