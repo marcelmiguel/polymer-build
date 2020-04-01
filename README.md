@@ -3,9 +3,20 @@
 ## Introduction
 
 Gives a base image to build Polymer projects
+Image prepared for k8s
 
 ## Example
 
-git commit -m "first commit"
-git remote add origin git@github.com:marcelmiguel/polymer-build.git
-git push -u origin master
+Dockerfile multi-stage, see example/Dockerfile
+
+## Build & Publish
+
+```sh
+make push
+```
+
+Only build:
+
+```bash
+make build
+```

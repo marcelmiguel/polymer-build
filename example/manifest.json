@@ -1,0 +1,7 @@
+{
+  "name": "polymer",
+  "short_name": "polymer",
+  "description": "Polymer example in docker with nginx",
+  "start_url": "/",
+  "display": "standalone"
+}
