@@ -1,10 +1,10 @@
-RELEASE?=v0.0.1
+RELEASE?=v0.0.2
 RELEASEW?=v0.0.4
 
 build: 
 	docker build --no-cache -t marcelmiguel/polymer-build:$(RELEASE) .
 
-push: container
+push: build
 	docker login
 	docker push marcelmiguel/polymer-build:$(RELEASE)
 
