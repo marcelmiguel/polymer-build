@@ -2,7 +2,8 @@
   "name": "polymer",
   "description": "Polymer example in docker with nginx",
   "dependencies": {
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.0.0",
+    "polymer": "file:"
   },
   "devDependencies": {
     "@polymer/test-fixture": "^4.0.2",

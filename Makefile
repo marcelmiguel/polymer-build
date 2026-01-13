@@ -1,5 +1,5 @@
-RELEASE?=v0.0.2
-RELEASEW?=v0.0.4
+RELEASE?=v0.0.5
+RELEASEW?=v0.0.5
 
 build: 
 	docker build --no-cache -t marcelmiguel/polymer-build:$(RELEASE) .

@@ -2,7 +2,7 @@
 # Build image
 ############################
 
-FROM marcelmiguel/polymer-build:v0.0.2 as builder
+FROM marcelmiguel/polymer-build:v0.0.4 as builder
 
 LABEL mantainer="Marcel Miguel <marcel.miguel@neogrup.com>"
 
@@ -17,6 +17,7 @@ COPY . ./
 
 RUN echo -e "\033[0;36mNode version: " $(node --version) "\033[0m\n"\
 "\033[0;36mPolymer version: " $(polymer --version) "\033[0m\n"\
+"\033[0;36mNPM version: " $(npm --version) "\033[0m\n"\
 "\033[0;36mBower version: " $(bower --version) "\033[0m"
 
 RUN polymer build

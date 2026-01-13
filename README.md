@@ -14,7 +14,7 @@ Dockerfile multi-stage, see example/Dockerfile
 # Build image
 ############################
 
-FROM marcelmiguel/polymer-build:v0.0.2 as builder
+FROM marcelmiguel/polymer-build:v0.0.4 as builder
 
 LABEL mantainer="Marcel Miguel <marcel.miguel@neogrup.com>"
 

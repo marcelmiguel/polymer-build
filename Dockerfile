@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:16-alpine
 #FROM node:slim
 
 LABEL mantainer="Marcel Miguel <marcel.miguel@gmail.com>"
